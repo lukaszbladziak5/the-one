@@ -13,19 +13,26 @@ public class ADONRouterBB extends ActiveRouter{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public ADONRouterBB(ActiveRouter r) {
+	public ADONRouterBB(ADONRouterBB r) {
 		super(r);
 		// TODO Auto-generated constructor stub
 	}
-	
-	@Override
-	public void init(DTNHost host, List<MessageListener> mListeners) {
-		super.init(host, mListeners);
-	}
 
-	@Override
-	public MessageRouter replicate() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public ADONRouterBB replicate() {
+        // Tworzenie nowego obiektu ADONRouterBB
+        ADONRouterBB replicatedRouter = new ADONRouterBB(this);
+        return replicatedRouter;
+    }
+	
+//	@Override
+//	public void init(DTNHost host, List<MessageListener> mListeners) {
+//		super.init(host, mListeners);
+//	}
+
+//	@Override
+//	public MessageRouter replicate() {
+//		// TODO Auto-generated method stub
+//		return;
+//	}
 }
